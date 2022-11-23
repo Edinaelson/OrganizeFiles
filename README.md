@@ -9,5 +9,5 @@ Organizando seus arquivos.
 2-enviar arquivo para sua respectiva pasta.
 
 # proximas funcionalidades: 
-1-Escolher o nome da pasta a ser criada.
+<h6>1-Escolher o nome da pasta a ser criada.</h6>
 2-Escolher o caminho para serem organizado os arquivos.
