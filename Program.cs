@@ -13,6 +13,8 @@ class Program
         Console.ReadKey();
     }
 
+    string directory = @"C:\\Users\\sedin\\Downloads";
+
     public static void moverArquivosImagens()
     {
         string[] archivesPng = Directory.GetFiles(@"C:\\Users\\sedin\\Downloads", "*.png");
