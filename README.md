@@ -1,7 +1,7 @@
 # OrganizeFiles
 Organizando seus arquivos.
 
-resumo:
+#h1 resumo:
   organiza seus arquivos para as suas respectivas pastas, ex: foto.png o programa enviar para a pasta imagem.
   
 Funcionalidades:
