@@ -1,27 +1,28 @@
 ﻿using System.IO;
 using System.Security.Cryptography.X509Certificates;
+using FileChecks;
 
 class Program
 {
     static void Main(string[] args)
     {
-        moverArquivosMp4();
+        //moverArquivosVideos();
         moverArquivosImagens();
-        moverProgramas();
-        moverArquivos();
-        
+        //moverProgramas();
+        //moverArquivos();
+        //Console.WriteLine("Caminho atual: {0}",Names.path);
         Console.ReadKey();
     }
-
-    string directory = @"C:\\Users\\sedin\\Downloads";
+    
+    
 
     public static void moverArquivosImagens()
     {
-        string[] archivesPng = Directory.GetFiles(@"C:\\Users\\sedin\\Downloads", "*.png");
-        string[] archivesJpg = Directory.GetFiles(@"C:\\Users\\sedin\\Downloads", "*.jpg");
-        string[] archivesJpeg = Directory.GetFiles(@"C:\\Users\\sedin\\Downloads", "*.jpeg");
+        string[] archivesPng = Directory.GetFiles(@Names.path, "*.png");
+        string[] archivesJpg = Directory.GetFiles(@Names.path, "*.jpg");
+        string[] archivesJpeg = Directory.GetFiles(@Names.path, "*.jpeg");
 
-        string destiny = @"C:\\Users\\sedin\\Downloads\\Imagens";
+        string destiny = @Names.path + "\\Imagens";
 
         if (!Directory.Exists(destiny))
         {
@@ -52,12 +53,12 @@ class Program
     public static void moverArquivos()
     {
         
-        string[] archivesRar = Directory.GetFiles(@"C:\Users\sedin\Downloads","*.rar");
-        string[] archivesDocx = Directory.GetFiles(@"C:\Users\sedin\Downloads","*.docx");
-        string[] archivesPdf = Directory.GetFiles(@"C:\Users\sedin\Downloads","*.pdf");
-        string[] archivesZip = Directory.GetFiles(@"C:\Users\sedin\Downloads","*.zip");
+        string[] archivesRar = Directory.GetFiles(@Names.path,"*.rar");
+        string[] archivesDocx = Directory.GetFiles(@Names.path,"*.docx");
+        string[] archivesPdf = Directory.GetFiles(@Names.path,"*.pdf");
+        string[] archivesZip = Directory.GetFiles(@Names.path,"*.zip");
         
-        string destiny = @"C:\Users\sedin\Downloads\Documentos";
+        string destiny = @Names.path + "\\Documentos";
         
         if (!Directory.Exists(destiny))
         {
@@ -94,9 +95,9 @@ class Program
 
     public static void moverProgramas()
     {
-        string[] archivesExe = Directory.GetFiles(@"C:\Users\sedin\Downloads","*.exe");
-        string[] archivesMsi = Directory.GetFiles(@"C:\Users\sedin\Downloads","*.msi");
-        string destiny = @"C:\Users\sedin\Downloads\Programs";
+        string[] archivesExe = Directory.GetFiles(@Names.path,"*.exe");
+        string[] archivesMsi = Directory.GetFiles(@Names.path,"*.msi");
+        string destiny = @Names.path + "\\Programs";
         
         //create directory
         if (!Directory.Exists(destiny))
@@ -119,10 +120,10 @@ class Program
         Console.WriteLine("Movimentação de programas realizada com sucesso"); 
     }
 
-    public static void moverArquivosMp4()
+    public static void moverArquivosVideos()
     {
-        string[] archives = Directory.GetFiles(@"C:\Users\sedin\Downloads","*.mp4");
-        string destiny = @"C:\\Users\\sedin\\Downloads\\Video";
+        string[] archives = Directory.GetFiles(@Names.path,"*.mp4");
+        string destiny = @Names.path + "\\Video";
         
         if (!Directory.Exists(destiny))
         {
