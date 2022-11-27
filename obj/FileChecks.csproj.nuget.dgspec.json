@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\datam\\OneDrive - Educacional\\dot .Net\\FileChecks\\FileChecks.csproj": {}
+    "C:\\Users\\sedin\\OneDrive - Educacional\\dot .Net\\FileChecks\\FileChecks.csproj": {}
   },
   "projects": {
-    "C:\\Users\\datam\\OneDrive - Educacional\\dot .Net\\FileChecks\\FileChecks.csproj": {
+    "C:\\Users\\sedin\\OneDrive - Educacional\\dot .Net\\FileChecks\\FileChecks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\datam\\OneDrive - Educacional\\dot .Net\\FileChecks\\FileChecks.csproj",
+        "projectUniqueName": "C:\\Users\\sedin\\OneDrive - Educacional\\dot .Net\\FileChecks\\FileChecks.csproj",
         "projectName": "FileChecks",
-        "projectPath": "C:\\Users\\datam\\OneDrive - Educacional\\dot .Net\\FileChecks\\FileChecks.csproj",
-        "packagesPath": "C:\\Users\\datam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\datam\\OneDrive - Educacional\\dot .Net\\FileChecks\\obj\\",
+        "projectPath": "C:\\Users\\sedin\\OneDrive - Educacional\\dot .Net\\FileChecks\\FileChecks.csproj",
+        "packagesPath": "C:\\Users\\sedin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sedin\\OneDrive - Educacional\\dot .Net\\FileChecks\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\datam\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\sedin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\sedin\\.dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
