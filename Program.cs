@@ -11,8 +11,7 @@ class Program
         moverArquivosImagens();
         moverProgramas();
         moverArquivos();
-        //Console.WriteLine("Caminho atual: {0}",Names.path);
-        //changename();
+        
         Console.ReadKey();
     }
 
@@ -32,29 +31,10 @@ class Program
 
         string destiny = @Names.path + "\\Imagens";
 
-        if (!Directory.Exists(destiny))
-        {
-            Directory.CreateDirectory(destiny);
-        }
-
-        for (int i = 0; i < archivesJpeg.Length; i++)
-        {
-            var files = new FileInfo(archivesJpeg[i]);
-            files.MoveTo(Path.Combine(destiny, files.Name));
-        }
-
-        for (int i = 0; i < archivesPng.Length; i++)
-        {
-            var files = new FileInfo(archivesPng[i]);
-            files.MoveTo(Path.Combine(destiny, files.Name));
-        }
-
-        for (int i = 0; i < archivesJpg.Length; i++)
-        {
-            var files = new FileInfo(archivesJpg[i]);
-            files.MoveTo(Path.Combine(destiny, files.Name));
-        }
-
+        utils.moveArchive(archivesPng,destiny);
+        utils.moveArchive(archivesJpg,destiny);
+        utils.moveArchive(archivesJpeg,destiny);
+        
         Console.WriteLine("Movimentação de imagens realizada com sucesso");
     }
 
@@ -66,51 +46,25 @@ class Program
         string[] archivesZip = Directory.GetFiles(@Names.path, "*.zip");
 
         string destiny = @Names.path + "\\Documentos";
-
-        if (!Directory.Exists(destiny))
-        {
-            Directory.CreateDirectory(destiny);
-        }
-
-        for (int i = 0; i < archivesRar.Length; i++)
-        {
-            var files = new FileInfo(archivesRar[i]);
-            files.MoveTo(Path.Combine(destiny, files.Name));
-        }
-
-        for (int i = 0; i < archivesDocx.Length; i++)
-        {
-            var files = new FileInfo(archivesDocx[i]);
-            files.MoveTo(Path.Combine(destiny, files.Name));
-        }
-
-        for (int i = 0; i < archivesPdf.Length; i++)
-        {
-            var files = new FileInfo(archivesPdf[i]);
-            files.MoveTo(Path.Combine(destiny, files.Name));
-        }
-
-        for (int i = 0; i < archivesZip.Length; i++)
-        {
-            var files = new FileInfo(archivesZip[i]);
-            files.MoveTo(Path.Combine(destiny, files.Name));
-        }
+        
+        utils.moveArchive(archivesRar,destiny);
+        utils.moveArchive(archivesDocx,destiny);
+        utils.moveArchive(archivesPdf,destiny);
+        utils.moveArchive(archivesZip,destiny);
 
         Console.WriteLine("Movimentação de arquivos realizada com sucesso");
     }
 
     public static void moverProgramas()
     {
-        string[] archivesExe = Directory.GetFiles(@Names.path, "*.exe");
+        string[] archivesExe = Directory.GetFiles(@"C:\\Users\\sedin\\Downloads", "*.exe");
         string[] archivesMsi = Directory.GetFiles(@Names.path, "*.msi");
+        
         string destiny = @Names.path + "\\Programs";
-
-        //create directory
-        if (!Directory.Exists(destiny))
-        {
-            Directory.CreateDirectory(destiny);
-        }
-
+        
+        utils.moveArchive(archivesMsi,destiny);
+        //Encontrar maneira de refatorar programa que se auto envia.
+        //utils.moveArchive(archivesExe,destiny);
         for (int i = 0; i < archivesExe.Length; i++)
         {
             var files = new FileInfo(archivesExe[i]);
@@ -121,37 +75,18 @@ class Program
             
         }
 
-        for (int i = 0; i < archivesMsi.Length; i++)
-        {
-            var files = new FileInfo(archivesMsi[i]);
-            files.MoveTo(Path.Combine(destiny, files.Name));
-        }
-
         Console.WriteLine("Movimentação de programas realizada com sucesso");
     }
 
     public static void moverArquivosVideos()
     {
         string[] archives = Directory.GetFiles(@Names.path, "*.mp4");
-        string[] archivesmkv = Directory.GetFiles(@Names.path, "*.mkv");
-        string destiny = @Names.path + "\\Video";
-
-        if (!Directory.Exists(destiny))
-        {
-            Directory.CreateDirectory(destiny);
-        }
+        string[] archivesMkv = Directory.GetFiles(@Names.path, "*.mkv");
         
-        for (int i = 0; i < archivesmkv.Length; i++)
-        {
-            var files = new FileInfo(archivesmkv[i]);
-            files.MoveTo(Path.Combine(destiny, files.Name));
-        }
-
-        for (int i = 0; i < archives.Length; i++)
-        {
-            var files = new FileInfo(archives[i]);
-            files.MoveTo(Path.Combine(destiny, files.Name));
-        }
+        string destiny = @Names.path + "\\Video";
+        
+        utils.moveArchive(archives,destiny);
+        utils.moveArchive(archivesMkv,destiny);
 
         Console.WriteLine("Movimentação de videos realizado com sucesso");
     }
