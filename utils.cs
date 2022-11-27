@@ -21,4 +21,22 @@ public static class utils
         }
         
     }
+
+    public static void moveprograms(string[] archive, string destiny)
+    {
+        if (!Directory.Exists(destiny))
+        {
+            Directory.CreateDirectory(destiny);
+        }
+        
+        for (int i = 0; i < archive.Length; i++)
+        {
+            var files = new FileInfo(archive[i]);
+            if (!files.Name.Equals("FileChecks.exe"))
+            {
+                files.MoveTo(Path.Combine(destiny, files.Name));    
+            }
+        }
+    }
+
 }
