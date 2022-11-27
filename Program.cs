@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.ComponentModel.Design;
+using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using FileChecks;
 
@@ -6,15 +7,22 @@ class Program
 {
     static void Main(string[] args)
     {
-        //moverArquivosVideos();
+        moverArquivosVideos();
         moverArquivosImagens();
-        //moverProgramas();
-        //moverArquivos();
+        moverProgramas();
+        moverArquivos();
         //Console.WriteLine("Caminho atual: {0}",Names.path);
+        //changename();
         Console.ReadKey();
     }
-    
-    
+
+    public static string changename()
+    {
+        Console.WriteLine("Informe nome: ");
+        string name = Console.ReadLine();
+
+        return name;
+    }
 
     public static void moverArquivosImagens()
     {
@@ -32,7 +40,7 @@ class Program
         for (int i = 0; i < archivesJpeg.Length; i++)
         {
             var files = new FileInfo(archivesJpeg[i]);
-            files.MoveTo(Path.Combine(destiny, files.Name)); 
+            files.MoveTo(Path.Combine(destiny, files.Name));
         }
 
         for (int i = 0; i < archivesPng.Length; i++)
@@ -52,82 +60,91 @@ class Program
 
     public static void moverArquivos()
     {
-        
-        string[] archivesRar = Directory.GetFiles(@Names.path,"*.rar");
-        string[] archivesDocx = Directory.GetFiles(@Names.path,"*.docx");
-        string[] archivesPdf = Directory.GetFiles(@Names.path,"*.pdf");
-        string[] archivesZip = Directory.GetFiles(@Names.path,"*.zip");
-        
+        string[] archivesRar = Directory.GetFiles(@Names.path, "*.rar");
+        string[] archivesDocx = Directory.GetFiles(@Names.path, "*.docx");
+        string[] archivesPdf = Directory.GetFiles(@Names.path, "*.pdf");
+        string[] archivesZip = Directory.GetFiles(@Names.path, "*.zip");
+
         string destiny = @Names.path + "\\Documentos";
-        
+
         if (!Directory.Exists(destiny))
         {
             Directory.CreateDirectory(destiny);
         }
-        
+
         for (int i = 0; i < archivesRar.Length; i++)
         {
             var files = new FileInfo(archivesRar[i]);
             files.MoveTo(Path.Combine(destiny, files.Name));
         }
-        
+
         for (int i = 0; i < archivesDocx.Length; i++)
         {
             var files = new FileInfo(archivesDocx[i]);
             files.MoveTo(Path.Combine(destiny, files.Name));
         }
-        
+
         for (int i = 0; i < archivesPdf.Length; i++)
         {
             var files = new FileInfo(archivesPdf[i]);
             files.MoveTo(Path.Combine(destiny, files.Name));
         }
-        
+
         for (int i = 0; i < archivesZip.Length; i++)
         {
             var files = new FileInfo(archivesZip[i]);
             files.MoveTo(Path.Combine(destiny, files.Name));
         }
-        
-        Console.WriteLine("Movimentação de arquivos realizada com sucesso"); 
-        
+
+        Console.WriteLine("Movimentação de arquivos realizada com sucesso");
     }
 
     public static void moverProgramas()
     {
-        string[] archivesExe = Directory.GetFiles(@Names.path,"*.exe");
-        string[] archivesMsi = Directory.GetFiles(@Names.path,"*.msi");
+        string[] archivesExe = Directory.GetFiles(@Names.path, "*.exe");
+        string[] archivesMsi = Directory.GetFiles(@Names.path, "*.msi");
         string destiny = @Names.path + "\\Programs";
-        
+
         //create directory
         if (!Directory.Exists(destiny))
         {
             Directory.CreateDirectory(destiny);
         }
-        
+
         for (int i = 0; i < archivesExe.Length; i++)
         {
             var files = new FileInfo(archivesExe[i]);
-            files.MoveTo(Path.Combine(destiny, files.Name));
+            if (!files.Name.Equals("FileChecks.exe"))
+            {
+                files.MoveTo(Path.Combine(destiny, files.Name));    
+            }
+            
         }
-        
+
         for (int i = 0; i < archivesMsi.Length; i++)
         {
             var files = new FileInfo(archivesMsi[i]);
             files.MoveTo(Path.Combine(destiny, files.Name));
         }
-        
-        Console.WriteLine("Movimentação de programas realizada com sucesso"); 
+
+        Console.WriteLine("Movimentação de programas realizada com sucesso");
     }
 
     public static void moverArquivosVideos()
     {
-        string[] archives = Directory.GetFiles(@Names.path,"*.mp4");
+        string[] archives = Directory.GetFiles(@Names.path, "*.mp4");
+        string[] archivesmkv = Directory.GetFiles(@Names.path, "*.mkv");
         string destiny = @Names.path + "\\Video";
-        
+
         if (!Directory.Exists(destiny))
         {
             Directory.CreateDirectory(destiny);
+        }
+        
+        for (int i = 0; i < archivesmkv.Length; i++)
+        {
+            var files = new FileInfo(archivesmkv[i]);
+            files.MoveTo(Path.Combine(destiny, files.Name));
         }
 
         for (int i = 0; i < archives.Length; i++)
@@ -135,20 +152,22 @@ class Program
             var files = new FileInfo(archives[i]);
             files.MoveTo(Path.Combine(destiny, files.Name));
         }
-        Console.WriteLine("Movimentação de videos realizado com sucesso");
 
+        Console.WriteLine("Movimentação de videos realizado com sucesso");
     }
 
     public static void mostrarArquivos()
     {
         string[] diretorios = Directory.GetDirectories("C:\\Users\\sedin\\Downloads\\Video");
-        string[] arquivos = Directory.GetFiles("C:\\Users\\sedin\\Downloads\\Video", "*.mp4", SearchOption.AllDirectories);
+        string[] arquivos =
+            Directory.GetFiles("C:\\Users\\sedin\\Downloads\\Video", "*.mp4", SearchOption.AllDirectories);
 
         Console.WriteLine("Diretórios:");
         foreach (string dir in diretorios)
         {
             Console.WriteLine(dir);
         }
+
         Console.WriteLine("Arquivos:");
 
         int cont = 0;
@@ -158,7 +177,7 @@ class Program
             Console.WriteLine(arq);
             cont++;
         }
+
         Console.WriteLine("Quantidade de filmes: " + cont);
     }
-
 }
