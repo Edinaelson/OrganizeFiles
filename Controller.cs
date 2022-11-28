@@ -1,23 +1,8 @@
-﻿using System.ComponentModel.Design;
-using System.IO;
-using System.Security.Cryptography.X509Certificates;
-using FileChecks;
+﻿namespace FileChecks;
 
-using static FileChecks.Controller;
-
-class Program
+public static class Controller
 {
-    static void Main(string[] args)
-    {
-        //mostrarArquivos();
-        moverArquivosVideos();
-        moverArquivosImagens();
-        moverProgramas();
-        moverArquivos();
-        
-        Console.ReadKey();
-    }
-
+    
     public static string changename()
     {
         Console.WriteLine("Informe nome: ");
@@ -34,10 +19,10 @@ class Program
 
         string destiny = @Names.path + "\\Imagens";
 
-        utils.moveArchive(archivesPng,destiny);
-        utils.moveArchive(archivesJpg,destiny);
-        utils.moveArchive(archivesJpeg,destiny);
-        
+        utils.moveArchive(archivesPng, destiny);
+        utils.moveArchive(archivesJpg, destiny);
+        utils.moveArchive(archivesJpeg, destiny);
+
         Console.WriteLine("Movimentação de imagens realizada com sucesso");
     }
 
@@ -49,11 +34,11 @@ class Program
         string[] archivesZip = Directory.GetFiles(@Names.path, "*.zip");
 
         string destiny = @Names.path + "\\Documentos";
-        
-        utils.moveArchive(archivesRar,destiny);
-        utils.moveArchive(archivesDocx,destiny);
-        utils.moveArchive(archivesPdf,destiny);
-        utils.moveArchive(archivesZip,destiny);
+
+        utils.moveArchive(archivesRar, destiny);
+        utils.moveArchive(archivesDocx, destiny);
+        utils.moveArchive(archivesPdf, destiny);
+        utils.moveArchive(archivesZip, destiny);
 
         Console.WriteLine("Movimentação de arquivos realizada com sucesso");
     }
@@ -62,10 +47,10 @@ class Program
     {
         string[] archivesExe = Directory.GetFiles(@"C:\\Users\\sedin\\Downloads", "*.exe");
         string[] archivesMsi = Directory.GetFiles(@Names.path, "*.msi");
-        
+
         string destiny = @Names.path + "\\Programs";
-        
-        utils.moveArchive(archivesMsi,destiny);
+
+        utils.moveArchive(archivesMsi, destiny);
         //Encontrar maneira de refatorar programa que se auto envia.
         //utils.moveArchive(archivesExe,destiny);
         for (int i = 0; i < archivesExe.Length; i++)
@@ -73,9 +58,8 @@ class Program
             var files = new FileInfo(archivesExe[i]);
             if (!files.Name.Equals("FileChecks.exe"))
             {
-                files.MoveTo(Path.Combine(destiny, files.Name));    
+                files.MoveTo(Path.Combine(destiny, files.Name));
             }
-            
         }
 
         Console.WriteLine("Movimentação de programas realizada com sucesso");
@@ -85,11 +69,11 @@ class Program
     {
         string[] archives = Directory.GetFiles(@Names.path, "*.mp4");
         string[] archivesMkv = Directory.GetFiles(@Names.path, "*.mkv");
-        
+
         string destiny = @Names.path + "\\Video";
-        
-        utils.moveArchive(archives,destiny);
-        utils.moveArchive(archivesMkv,destiny);
+
+        utils.moveArchive(archives, destiny);
+        utils.moveArchive(archivesMkv, destiny);
 
         Console.WriteLine("Movimentação de videos realizado com sucesso");
     }
@@ -118,4 +102,5 @@ class Program
 
         Console.WriteLine("Quantidade de filmes: " + cont);
     }
+    
 }
