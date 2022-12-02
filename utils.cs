@@ -13,11 +13,15 @@ public static class utils
         {
             Directory.CreateDirectory(destiny);
         }
-        
+
         for (int i = 0; i < archive.Length; i++)
         {
             var files = new FileInfo(archive[i]);
-            files.MoveTo(Path.Combine(destiny, files.Name));
+            if (files.Name.Equals(archive))
+            {
+                files.MoveTo(Path.Combine(destiny, files.Name+i));
+            }
+            
         }
         
     }
