@@ -72,35 +72,9 @@ public static class Controller
 
         string destiny = @Names.path + "\\Video";
 
-        utils.moveArchive(archives, destiny);
-        utils.moveArchive(archivesMkv, destiny);
+        utils.moveVideos(archives, destiny);
+        utils.moveVideos(archivesMkv, destiny);
 
         Console.WriteLine("Movimentação de videos realizado com sucesso");
     }
-
-    public static void mostrarArquivos()
-    {
-        string[] diretorios = Directory.GetDirectories("C:\\Users\\sedin\\Downloads\\Video");
-        string[] arquivos =
-            Directory.GetFiles("C:\\Users\\sedin\\Downloads\\Video", "*.mp4", SearchOption.AllDirectories);
-
-        Console.WriteLine("Diretórios:");
-        foreach (string dir in diretorios)
-        {
-            Console.WriteLine(dir);
-        }
-
-        Console.WriteLine("Arquivos:");
-
-        int cont = 0;
-
-        foreach (string arq in arquivos)
-        {
-            Console.WriteLine(arq);
-            cont++;
-        }
-
-        Console.WriteLine("Quantidade de filmes: " + cont);
-    }
-    
 }
