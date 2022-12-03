@@ -6,8 +6,8 @@ Organizando seus arquivos.
   
 # Funcionalidades:
 
--[ ] Cria pasta se não tiver.
--[ ] enviar arquivo para sua respectiva pasta.
+- [x] Cria pasta se não tiver.
+- [x] enviar arquivo para sua respectiva pasta.
 
 # proximas funcionalidades: 
 
