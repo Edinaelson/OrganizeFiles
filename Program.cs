@@ -9,13 +9,13 @@ class Program
 {
     static void Main(string[] args)
     {
+        Color.colorUkraine();
         moveArchiveVideos();
         moveMusic();
         moveArchivePictures();
         moveProgramas();
         moveArchives();
-
-        Console.WriteLine("Aperte qualquer tecla para sair.");
+        Console.WriteLine("Aperte qualquer tecla para sair...");
         Console.ReadKey();
     }
 }
