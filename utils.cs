@@ -17,11 +17,7 @@ public static class utils
         for (int i = 0; i < archive.Length; i++)
         {
             var files = new FileInfo(archive[i]);
-            if (files.Name.Equals(archive))
-            {
-                files.MoveTo(Path.Combine(destiny, files.Name+i));
-            }
-            
+            files.MoveTo(Path.Combine(destiny, files.Name));
         }
         
     }
@@ -33,6 +29,7 @@ public static class utils
 
         string[] video = archive;
 
+
         if (!Directory.Exists(destiny))
         {
             Directory.CreateDirectory(destiny);
@@ -41,6 +38,16 @@ public static class utils
         for (int i = 0; i < archive.Length; i++)
         {
             var files = new FileInfo(archive[i]);
+            
+            //criacao de pasta // estudar criação de pastas e subpastas
+            var checkvideo = files.Name.Substring(0, 7);
+            
+            if (checkvideo == checkvideo)
+            {
+                Directory.CreateDirectory(checkvideo);
+                files.MoveTo(Path.Combine(checkvideo, files.Name));
+            }
+            
             files.MoveTo(Path.Combine(destiny, files.Name));
         }
     }
