@@ -2,15 +2,6 @@
 
 public static class Controller
 {
-    
-    public static string changename()
-    {
-        Console.WriteLine("Informe nome: ");
-        string name = Console.ReadLine();
-
-        return name;
-    }
-
     public static void moverArquivosImagens()
     {
         string[] archivesPng = Directory.GetFiles(@Names.path, "*.png");
@@ -45,14 +36,15 @@ public static class Controller
 
     public static void moverProgramas()
     {
+        
         string[] archivesExe = Directory.GetFiles(@Names.path, "*.exe");
         string[] archivesMsi = Directory.GetFiles(@Names.path, "*.msi");
 
         string destiny = @Names.path + "\\Programs";
 
         utils.moveArchive(archivesMsi, destiny);
-        //Encontrar maneira de refatorar programa que se auto envia.
-        //utils.moveArchive(archivesExe,destiny);
+        
+        //função para o proprio programa não se auto enviar.
         for (int i = 0; i < archivesExe.Length; i++)
         {
             var files = new FileInfo(archivesExe[i]);
@@ -72,9 +64,10 @@ public static class Controller
 
         string destiny = @Names.path + "\\Video";
 
-        utils.moveVideos(archives, destiny);
+        utils.moveArchive(archives, destiny);
         utils.moveVideos(archivesMkv, destiny);
 
         Console.WriteLine("Movimentação de videos realizado com sucesso");
     }
+    
 }
