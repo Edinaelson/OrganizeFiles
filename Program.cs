@@ -9,10 +9,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        moverArquivosVideos();
-        moverArquivosImagens();
-        moverProgramas();
-        moverArquivos();
+        moveArchiveVideos();
+        moveArchivePictures();
+        moveProgramas();
+        moveArchives();
+
+        Console.WriteLine("Aperte qualquer tecla para sair.");
         Console.ReadKey();
     }
 }

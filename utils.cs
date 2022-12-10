@@ -67,7 +67,7 @@ public static class utils
             var files = new FileInfo(archive[i]);
             if (!files.Name.Equals("FileChecks.exe"))
             {
-                files.MoveTo(Path.Combine(destiny, files.Name));    
+                files.MoveTo(Path.Combine(destiny, files.Name));
             }
         }
     }

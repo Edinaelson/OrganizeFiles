@@ -2,7 +2,7 @@
 
 public static class Controller
 {
-    public static void moverArquivosImagens()
+    public static void moveArchivePictures()
     {
         string[] archivesPng = Directory.GetFiles(@Names.path, "*.png");
         string[] archivesJpg = Directory.GetFiles(@Names.path, "*.jpg");
@@ -14,10 +14,10 @@ public static class Controller
         utils.moveArchive(archivesJpg, destiny);
         utils.moveArchive(archivesJpeg, destiny);
 
-        Console.WriteLine("Movimentação de imagens realizada com sucesso");
+        Color.color("Imagens");
     }
 
-    public static void moverArquivos()
+    public static void moveArchives()
     {
         string[] archivesRar = Directory.GetFiles(@Names.path, "*.rar");
         string[] archivesDocx = Directory.GetFiles(@Names.path, "*.docx");
@@ -30,11 +30,11 @@ public static class Controller
         utils.moveArchive(archivesDocx, destiny);
         utils.moveArchive(archivesPdf, destiny);
         utils.moveArchive(archivesZip, destiny);
-
-        Console.WriteLine("Movimentação de arquivos realizada com sucesso");
+        
+        Color.color("Arquivos");
     }
 
-    public static void moverProgramas()
+    public static void moveProgramas()
     {
         string[] archivesExe = Directory.GetFiles(@Names.path, "*.exe");
         string[] archivesMsi = Directory.GetFiles(@Names.path, "*.msi");
@@ -53,10 +53,10 @@ public static class Controller
             }
         }
 
-        Console.WriteLine("Movimentação de programas realizada com sucesso");
+        Color.color("Programas");
     }
 
-    public static void moverArquivosVideos()
+    public static void moveArchiveVideos()
     {
         string[] archives = Directory.GetFiles(@Names.path, "*.mp4");
         string[] archivesMkv = Directory.GetFiles(@Names.path, "*.mkv");
@@ -66,7 +66,7 @@ public static class Controller
         utils.moveArchive(archives, destiny);
         utils.moveVideos(archivesMkv, destiny);
 
-        Console.WriteLine("Movimentação de videos realizado com sucesso");
+        Color.color("Videos");
     }
     
 }
