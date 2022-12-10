@@ -10,6 +10,7 @@ class Program
     static void Main(string[] args)
     {
         moveArchiveVideos();
+        moveMusic();
         moveArchivePictures();
         moveProgramas();
         moveArchives();
