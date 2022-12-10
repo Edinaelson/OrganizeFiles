@@ -13,7 +13,6 @@ class Program
         moverArquivosImagens();
         moverProgramas();
         moverArquivos();
-        
         Console.ReadKey();
     }
 }

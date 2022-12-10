@@ -36,7 +36,6 @@ public static class Controller
 
     public static void moverProgramas()
     {
-        
         string[] archivesExe = Directory.GetFiles(@Names.path, "*.exe");
         string[] archivesMsi = Directory.GetFiles(@Names.path, "*.msi");
 
