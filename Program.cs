@@ -4,6 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 using FileChecks;
 
 using static FileChecks.Controller;
+using Console = System.Console;
 
 class Program
 {

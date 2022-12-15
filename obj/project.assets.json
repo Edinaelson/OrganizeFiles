@@ -8,33 +8,23 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\sedin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\datam\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sedin\\OneDrive - Educacional\\dot .Net\\FileChecks\\FileChecks.csproj",
+      "projectUniqueName": "C:\\Users\\datam\\OneDrive - Educacional\\dot .Net\\FileChecks\\FileChecks.csproj",
       "projectName": "FileChecks",
-      "projectPath": "C:\\Users\\sedin\\OneDrive - Educacional\\dot .Net\\FileChecks\\FileChecks.csproj",
-      "packagesPath": "C:\\Users\\sedin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sedin\\OneDrive - Educacional\\dot .Net\\FileChecks\\obj\\",
+      "projectPath": "C:\\Users\\datam\\OneDrive - Educacional\\dot .Net\\FileChecks\\FileChecks.csproj",
+      "packagesPath": "C:\\Users\\datam\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\datam\\OneDrive - Educacional\\dot .Net\\FileChecks\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\sedin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\datam\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
-      "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
-      },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
@@ -66,7 +56,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
