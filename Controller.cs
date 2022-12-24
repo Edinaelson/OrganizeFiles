@@ -76,14 +76,16 @@ public static class Controller
         Color.color("Arquivos");
     }
 
-    public static void moveProgramas()
+    public static void movePrograms()
     {
         string[] archivesExe = Directory.GetFiles(@Names.path, "*.exe");
         string[] archivesMsi = Directory.GetFiles(@Names.path, "*.msi");
+        string[] archivesIso = Directory.GetFiles(@Names.path, "*.iso");
 
         string destiny = @Names.path + "\\Programs";
 
         utils.moveArchive(archivesMsi, destiny);
+        utils.moveArchive(archivesIso, destiny);
         
         //função para o proprio programa não se auto enviar.
         for (int i = 0; i < archivesExe.Length; i++)
@@ -95,7 +97,7 @@ public static class Controller
             }
         }
 
-        Color.color("Programas");
+        Color.color("Programs");
     }
 
     public static void moveArchiveVideos()

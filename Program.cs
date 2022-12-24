@@ -14,7 +14,7 @@ class Program
         moveArchiveVideos();
         moveMusic();
         moveArchivePictures();
-        moveProgramas();
+        movePrograms();
         moveArchives();
         Console.WriteLine("Aperte qualquer tecla para sair...");
         Console.ReadKey();
