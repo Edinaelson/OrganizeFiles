@@ -2,7 +2,7 @@
 
 public static class Controller
 {
-    public static void moveArchivePictures()
+    public static void movePicture()
     {
         string[] archivesPng = Directory.GetFiles(@Names.path, "*.png");
         string[] archivesJpg = Directory.GetFiles(@Names.path, "*.jpg");
@@ -23,7 +23,7 @@ public static class Controller
         Color.color("Imagens");
     }
 
-    public static void moveArchives()
+    public static void moveArchive()
     {
         string[] archivesRar = Directory.GetFiles(@Names.path, "*.rar");
         string[] archivesDocx = Directory.GetFiles(@Names.path, "*.docx");
@@ -76,7 +76,7 @@ public static class Controller
         Color.color("Arquivos");
     }
 
-    public static void movePrograms()
+    public static void moveProgram()
     {
         string[] archivesExe = Directory.GetFiles(@Names.path, "*.exe");
         string[] archivesMsi = Directory.GetFiles(@Names.path, "*.msi");
@@ -87,7 +87,7 @@ public static class Controller
         utils.moveArchive(archivesMsi, destiny);
         utils.moveArchive(archivesIso, destiny);
         
-        //função para o proprio programa não se auto enviar.
+        //função para o programa não se auto enviar.
         for (int i = 0; i < archivesExe.Length; i++)
         {
             var files = new FileInfo(archivesExe[i]);
@@ -100,7 +100,7 @@ public static class Controller
         Color.color("Programs");
     }
 
-    public static void moveArchiveVideos()
+    public static void moveVideo()
     {
         string[] archivesMp4 = Directory.GetFiles(@Names.path, "*.mp4");
         string[] archivesAvi = Directory.GetFiles(@Names.path, "*.avi");
