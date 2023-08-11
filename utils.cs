@@ -10,7 +10,6 @@ public static class utils
 {
     public static void moveArchive(string[] archive, string destiny)
     {
-        
         /**
          * files move for folder and create folder if not exists*
          */
