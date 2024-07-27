@@ -10,11 +10,14 @@ class Program
         MoveMusic.moveMusic();
         MovePictures.MoveImg();
         MoveProgram.MoveProgramas();
-        MoveDocs.moveDocs();
+        MoveDocs.MoveDocumentos();
+        
+        MoveDocs.imprimirContagemDocumentos();
         MoveProgram.imprimirContagemProgramas();
         MoveMusic.imprimirContagemMusicas();
         MovePictures.imprimirContagemImagens();
         MoveVideo.imprimirContagemVideos();
+        
         Console.WriteLine("Aperte qualquer tecla para sair...");
         Console.ReadKey();
     }
