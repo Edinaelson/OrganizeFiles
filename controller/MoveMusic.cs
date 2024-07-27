@@ -2,53 +2,54 @@
 
 public class MoveMusic
 {
-    public static void moveArchive(string[] archive, string destiny)
-    {
-        /**
-         * files move for folder and create folder if not exists*
-         */
-
-        if (!Directory.Exists(destiny))
-        {
-            Directory.CreateDirectory(destiny);
-        }
-
-        for (int i = 0; i < archive.Length; i++)
-        {
-            var files = new FileInfo(archive[i]);
-            if(!files.Name.Equals(files.Name))
-            {
-                files.MoveTo(Path.Combine(destiny, files.Name));
-            }
-            else
-            {
-                files.MoveTo(Path.Combine(destiny, files.Name));
-            }
-            
-        }
-        
-    }
-    
+    public static int contMusic;
     public static string moveMusic()
     {
         
         // caminho da pasta de Musicas
+        string path = Names.path;
         
-        string[] archivesMp3 = Directory.GetFiles(@Names.path, "*.mp3");
-        string[] archivesM4a = Directory.GetFiles(@Names.path, "*.m4a");
-        string[] archivesWav = Directory.GetFiles(@Names.path, "*.wav");
-        string[] archivesWma = Directory.GetFiles(@Names.path, "*.wma");
-        string[] archivesAu = Directory.GetFiles(@Names.path, "*.au");
+        //novo caminho
+        string musicasPath = Path.Combine(Names.path, "Music");
+        if (!Directory.Exists(musicasPath))
+        {
+            Directory.CreateDirectory(musicasPath);
+        }
         
-        string destiny = @Names.path + "\\Music";
+        string[] archives = Directory.GetFiles(path);
         
-        utils.moveArchive(archivesMp3, destiny);
-        utils.moveArchive(archivesM4a, destiny);
-        utils.moveArchive(archivesWav, destiny);
-        utils.moveArchive(archivesWma, destiny);
-        utils.moveArchive(archivesAu, destiny);
-        
+        foreach (string archive in archives)
+        {
+            if (archive.EndsWith(".mp3", StringComparison.OrdinalIgnoreCase)
+                || archive.EndsWith(".m4a", StringComparison.OrdinalIgnoreCase)
+                || archive.EndsWith(".wav", StringComparison.OrdinalIgnoreCase)
+                || archive.EndsWith(".wma", StringComparison.OrdinalIgnoreCase)
+                || archive.EndsWith(".au", StringComparison.OrdinalIgnoreCase))
+            {
+                try
+                {
+                    string destinationPath = Path.Combine(musicasPath, Path.GetFileName(archive));
+                    if (File.Exists(destinationPath))
+                    {
+                        File.Move(archive, destinationPath, true);
+                    }
+                    else
+                    {
+                        File.Move(archive, destinationPath);
+                    }
+                    contMusic++;
+                }
+                catch (IOException e)
+                {
+                    Console.WriteLine(e);
+                }
+            }
+        }
         Color.color("Música");
+        return null;
+    }
+    public static void imprimirContagemMusicas() {
+        Console.WriteLine("quantidade de musicas: " + contMusic);
     }
     
 }

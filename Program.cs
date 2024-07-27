@@ -1,19 +1,18 @@
 ﻿using FileChecks;
 using FileChecks.controller;
-using static FileChecks.Controller;
 using Console = System.Console;
 class Program
 {
     static void Main(string[] args)
     {
         Color.colorUkraine();
-        moveVideo();
-        moveMusic();
+        MoveVideo.moveVideo();
+        MoveMusic.moveMusic();
         MovePictures.MoveImg();
-        MovePictures.imprimirContagem();
-        moveProgram();
+        MoveProgram.moveProgram();
         MoveDocs.moveDocs();
-        imprimirContagem();
+        MoveMusic.imprimirContagemMusicas();
+        MovePictures.imprimirContagemImagens();
         Console.WriteLine("Aperte qualquer tecla para sair...");
         Console.ReadKey();
         Console.ReadKey();
