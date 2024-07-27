@@ -1,12 +1,7 @@
-﻿using System.ComponentModel.Design;
-using System.IO;
-using System.Security.Cryptography.X509Certificates;
-using FileChecks;
-
+﻿using FileChecks;
+using FileChecks.controller;
 using static FileChecks.Controller;
-using static FileChecks.utils;
 using Console = System.Console;
-
 class Program
 {
     static void Main(string[] args)
@@ -14,9 +9,11 @@ class Program
         Color.colorUkraine();
         moveVideo();
         moveMusic();
-        movePicture();
+        MovePictures.MoveImg();
+        MovePictures.imprimirContagem();
         moveProgram();
-        moveArchive();
+        MoveDocs.moveDocs();
+        imprimirContagem();
         Console.WriteLine("Aperte qualquer tecla para sair...");
         Console.ReadKey();
         Console.ReadKey();

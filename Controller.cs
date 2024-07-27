@@ -2,6 +2,12 @@
 
 public static class Controller
 {
+    public static int contImg = 0;
+    public static int contDoc = 0;
+    public static int contVid = 0;
+    public static int contMusic = 0;
+    public static int contPrograms = 0;
+    
     public static void movePicture()
     {
         string[] archivesPng = Directory.GetFiles(@Names.path, "*.png");
@@ -19,7 +25,7 @@ public static class Controller
         utils.moveArchive(archivesGif, destiny);
         utils.moveArchive(archivesPsd, destiny);
         utils.moveArchive(archivesSvg, destiny);
-
+        
         Color.color("Imagens");
     }
 
@@ -142,5 +148,13 @@ public static class Controller
         utils.moveArchive(archivesAu, destiny);
         
         Color.color("Música");
+    }
+    
+    public static void imprimirContagem() {
+        Console.WriteLine("quantidade imagens: " + contImg);
+        Console.WriteLine("quantidade documentos: " + contDoc);
+        Console.WriteLine("quantidade videos: " + contVid);
+        Console.WriteLine("quantidade musicas: " + contMusic);
+        Console.WriteLine("quantidade programas: " + contPrograms);
     }
 }

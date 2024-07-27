@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sedin\\OneDrive - Educacional\\dotnet\\FileChecks\\FileChecks.csproj": {}
+    "C:\\dev\\OrganizeFiles\\FileChecks.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sedin\\OneDrive - Educacional\\dotnet\\FileChecks\\FileChecks.csproj": {
+    "C:\\dev\\OrganizeFiles\\FileChecks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sedin\\OneDrive - Educacional\\dotnet\\FileChecks\\FileChecks.csproj",
+        "projectUniqueName": "C:\\dev\\OrganizeFiles\\FileChecks.csproj",
         "projectName": "FileChecks",
-        "projectPath": "C:\\Users\\sedin\\OneDrive - Educacional\\dotnet\\FileChecks\\FileChecks.csproj",
+        "projectPath": "C:\\dev\\OrganizeFiles\\FileChecks.csproj",
         "packagesPath": "C:\\Users\\sedin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sedin\\OneDrive - Educacional\\dotnet\\FileChecks\\obj\\",
+        "outputPath": "C:\\dev\\OrganizeFiles\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sedin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -50,12 +50,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.27, 6.0.27]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
