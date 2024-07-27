@@ -45,7 +45,6 @@ public class MoveMusic
                 }
             }
         }
-        Color.color("Música");
         return null;
     }
     public static void imprimirContagemMusicas() {

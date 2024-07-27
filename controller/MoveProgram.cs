@@ -2,27 +2,61 @@
 
 public class MoveProgram
 {
-    public static void moveProgram()
+    public static int contProgram;
+    public static string MoveProgramas()
     {
-        string[] archivesExe = Directory.GetFiles(@Names.path, "*.exe");
-        string[] archivesMsi = Directory.GetFiles(@Names.path, "*.msi");
-        string[] archivesIso = Directory.GetFiles(@Names.path, "*.iso");
-
-        string destiny = @Names.path + "\\Programs";
-
-        utils.moveArchive(archivesMsi, destiny);
-        utils.moveArchive(archivesIso, destiny);
-        
-        //função para o programa não se auto enviar.
-        for (int i = 0; i < archivesExe.Length; i++)
+        // caminho da pasta de programas
+        string path = Names.path;
+    
+        // novo caminho
+        string programasPath = Path.Combine(Names.path, "Programas");
+        if (!Directory.Exists(programasPath))
         {
-            var files = new FileInfo(archivesExe[i]);
-            if (!files.Name.Equals("FileChecks.exe"))
+            Directory.CreateDirectory(programasPath);
+        }
+    
+        string[] archives = Directory.GetFiles(path);
+    
+        // mover apenas programas
+        foreach (string archive in archives)
+        {
+            if (archive.EndsWith(".exe", StringComparison.OrdinalIgnoreCase)
+                || archive.EndsWith(".iso", StringComparison.OrdinalIgnoreCase)
+                || archive.EndsWith(".dll", StringComparison.OrdinalIgnoreCase)
+                || archive.EndsWith(".pdb", StringComparison.OrdinalIgnoreCase)
+                || archive.EndsWith(".json", StringComparison.OrdinalIgnoreCase)
+                || archive.EndsWith(".msi", StringComparison.OrdinalIgnoreCase))
             {
-                files.MoveTo(Path.Combine(destiny, files.Name));
+                try
+                {
+                    string destinationPath = Path.Combine(programasPath, Path.GetFileName(archive));
+                    
+                    //tentativa para o programa que executa não se auto enviar
+                    // var files = Path.GetFileName(archive);
+                    // if (!files.Equals("FileChecks.exe"))
+                    // {
+                    //     File.Move(archive, destinationPath, true);
+                    // }
+                    
+                    if (File.Exists(destinationPath))
+                    {
+                        File.Move(archive, destinationPath, true);
+                    }
+                    else
+                    {
+                        File.Move(archive, destinationPath);
+                    }
+                    contProgram++;
+                }
+                catch (IOException e)
+                {
+                    Console.WriteLine(e);
+                }
             }
         }
-
-        Color.color("Programs");
+        return null;
+    }
+    public static void imprimirContagemProgramas() {
+        Console.WriteLine("quantidade de programas: " + contProgram);
     }
 }

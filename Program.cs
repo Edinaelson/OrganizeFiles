@@ -9,8 +9,9 @@ class Program
         MoveVideo.moveVideo();
         MoveMusic.moveMusic();
         MovePictures.MoveImg();
-        MoveProgram.moveProgram();
+        MoveProgram.MoveProgramas();
         MoveDocs.moveDocs();
+        MoveProgram.imprimirContagemProgramas();
         MoveMusic.imprimirContagemMusicas();
         MovePictures.imprimirContagemImagens();
         MoveVideo.imprimirContagemVideos();
