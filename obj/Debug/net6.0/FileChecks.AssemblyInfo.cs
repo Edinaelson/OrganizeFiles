@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FileChecks")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51d02bb40d7fbd95fe749e9b8e0af32443f49cba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+afa8f93c2cf2150e044cb4b47ef5bef2ec9941c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("FileChecks")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FileChecks")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

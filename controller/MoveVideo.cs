@@ -2,28 +2,55 @@
 
 public class MoveVideo
 {
-    public static void moveVideo()
+    public static int contVid;
+    public static string moveVideo()
     {
-        string[] archivesMp4 = Directory.GetFiles(@Names.path, "*.mp4");
-        string[] archivesAvi = Directory.GetFiles(@Names.path, "*.avi");
-        string[] archivesMov = Directory.GetFiles(@Names.path, "*.mov");
-        string[] archivesMpg = Directory.GetFiles(@Names.path, "*.mpg");
-        string[] archivesMpeg = Directory.GetFiles(@Names.path, "*.mpeg");
-        string[] archivesWmv = Directory.GetFiles(@Names.path, "*.wmv");
-        string[] archivesFlv = Directory.GetFiles(@Names.path, "*.flv");
-        string[] archivesMkv = Directory.GetFiles(@Names.path, "*.mkv");
-
-        string destiny = @Names.path + "\\Video";
-
-        utils.moveArchive(archivesMp4, destiny);
-        utils.moveArchive(archivesAvi, destiny);
-        utils.moveArchive(archivesMov, destiny);
-        utils.moveArchive(archivesMpg, destiny);
-        utils.moveArchive(archivesMpeg, destiny);
-        utils.moveArchive(archivesWmv, destiny);
-        utils.moveArchive(archivesFlv, destiny);
-        utils.moveArchive(archivesMkv, destiny);
-
-        Color.color("Videos");
+        // caminho da pasta de videos
+        string path = Names.path;
+    
+        // novo caminho
+        string videoPath = Path.Combine(Names.path, "Videos");
+        if (!Directory.Exists(videoPath))
+        {
+            Directory.CreateDirectory(videoPath);
+        }
+    
+        string[] archives = Directory.GetFiles(path);
+    
+        // mover apenas videos
+        foreach (string archive in archives)
+        {
+            if (archive.EndsWith(".mp4", StringComparison.OrdinalIgnoreCase)
+                || archive.EndsWith(".avi", StringComparison.OrdinalIgnoreCase)
+                || archive.EndsWith(".mov", StringComparison.OrdinalIgnoreCase)
+                || archive.EndsWith(".mpg", StringComparison.OrdinalIgnoreCase)
+                || archive.EndsWith(".mpeg", StringComparison.OrdinalIgnoreCase)
+                || archive.EndsWith(".flv", StringComparison.OrdinalIgnoreCase)
+                || archive.EndsWith(".mkv", StringComparison.OrdinalIgnoreCase)
+                || archive.EndsWith(".wmv", StringComparison.OrdinalIgnoreCase))
+            {
+                try
+                {
+                    string destinationPath = Path.Combine(videoPath, Path.GetFileName(archive));
+                    if (File.Exists(destinationPath))
+                    {
+                        File.Move(archive, destinationPath, true);
+                    }
+                    else
+                    {
+                        File.Move(archive, destinationPath);
+                    }
+                    contVid++;
+                }
+                catch (IOException e)
+                {
+                    Console.WriteLine(e);
+                }
+            }
+        }
+        return null;
+    }
+    public static void imprimirContagemVideos() {
+        Console.WriteLine("quantidade de videos: " + contVid);
     }
 }

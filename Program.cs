@@ -13,8 +13,8 @@ class Program
         MoveDocs.moveDocs();
         MoveMusic.imprimirContagemMusicas();
         MovePictures.imprimirContagemImagens();
+        MoveVideo.imprimirContagemVideos();
         Console.WriteLine("Aperte qualquer tecla para sair...");
-        Console.ReadKey();
         Console.ReadKey();
     }
 }
