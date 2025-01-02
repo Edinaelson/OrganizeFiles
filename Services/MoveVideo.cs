@@ -6,14 +6,11 @@ public class MoveVideo
     public static string moveVideo()
     {
         // caminho da pasta de videos
-        string path = Names.path;
+        string path = Directories.path;
     
         // novo caminho
-        string videoPath = Path.Combine(Names.path, "Videos");
-        if (!Directory.Exists(videoPath))
-        {
-            Directory.CreateDirectory(videoPath);
-        }
+        string videoPath = Path.Combine(Directories.path, "Videos");
+        
     
         string[] archives = Directory.GetFiles(path);
     
@@ -31,6 +28,13 @@ public class MoveVideo
             {
                 try
                 {
+                    contVid++;
+                    if (!Directory.Exists(videoPath))
+                    {
+                        if(contVid > 0)
+                            Directory.CreateDirectory(videoPath);
+                    }
+                    
                     string destinationPath = Path.Combine(videoPath, Path.GetFileName(archive));
                     if (File.Exists(destinationPath))
                     {
@@ -40,7 +44,7 @@ public class MoveVideo
                     {
                         File.Move(archive, destinationPath);
                     }
-                    contVid++;
+                    
                 }
                 catch (IOException e)
                 {

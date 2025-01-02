@@ -7,14 +7,11 @@ public class MoveMusic
     {
         
         // caminho da pasta de Musicas
-        string path = Names.path;
+        string path = Directories.path;
         
         //novo caminho
-        string musicasPath = Path.Combine(Names.path, "Music");
-        if (!Directory.Exists(musicasPath))
-        {
-            Directory.CreateDirectory(musicasPath);
-        }
+        string musicasPath = Path.Combine(Directories.path, "Music");
+        
         
         string[] archives = Directory.GetFiles(path);
         
@@ -28,6 +25,13 @@ public class MoveMusic
             {
                 try
                 {
+                    contMusic++;
+                    if (!Directory.Exists(musicasPath))
+                    {
+                        if(contMusic > 0)
+                            Directory.CreateDirectory(musicasPath);
+                    }
+                    
                     string destinationPath = Path.Combine(musicasPath, Path.GetFileName(archive));
                     if (File.Exists(destinationPath))
                     {
@@ -37,7 +41,7 @@ public class MoveMusic
                     {
                         File.Move(archive, destinationPath);
                     }
-                    contMusic++;
+                    
                 }
                 catch (IOException e)
                 {

@@ -6,14 +6,11 @@ public class MoveProgram
     public static string MoveProgramas()
     {
         // caminho da pasta de programas
-        string path = Names.path;
+        string path = Directories.path;
     
         // novo caminho
-        string programasPath = Path.Combine(Names.path, "Programas");
-        if (!Directory.Exists(programasPath))
-        {
-            Directory.CreateDirectory(programasPath);
-        }
+        string programasPath = Path.Combine(Directories.path, "Programas");
+        
     
         string[] archives = Directory.GetFiles(path);
     
@@ -29,14 +26,14 @@ public class MoveProgram
             {
                 try
                 {
-                    string destinationPath = Path.Combine(programasPath, Path.GetFileName(archive));
+                    contProgram++;
+                    if (!Directory.Exists(programasPath))
+                    {
+                        if(contProgram > 0)
+                            Directory.CreateDirectory(programasPath);
+                    }
                     
-                    //tentativa para o programa que executa não se auto enviar
-                    // var files = Path.GetFileName(archive);
-                    // if (!files.Equals("FileChecks.exe"))
-                    // {
-                    //     File.Move(archive, destinationPath, true);
-                    // }
+                    string destinationPath = Path.Combine(programasPath, Path.GetFileName(archive));
                     
                     if (File.Exists(destinationPath))
                     {
@@ -46,7 +43,7 @@ public class MoveProgram
                     {
                         File.Move(archive, destinationPath);
                     }
-                    contProgram++;
+                    
                 }
                 catch (IOException e)
                 {

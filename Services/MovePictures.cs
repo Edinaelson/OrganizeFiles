@@ -6,15 +6,11 @@ public class MovePictures
     public static string MoveImg()
     {
         // caminho da pasta de Imagens
-        string path = Names.path;
+        string path = Directories.path;
     
         // novo caminho
-        string imagensPath = Path.Combine(Names.path, "imagens");
-        if (!Directory.Exists(imagensPath))
-        {
-            Directory.CreateDirectory(imagensPath);
-        }
-    
+        string imagensPath = Path.Combine(Directories.path, "Imagens");
+        
         string[] archives = Directory.GetFiles(path);
     
         // mover apenas imagens
@@ -29,6 +25,13 @@ public class MovePictures
             {
                 try
                 {
+                    contImg++;
+                    if (!Directory.Exists(imagensPath))
+                    {
+                        if (contImg > 0)
+                            Directory.CreateDirectory(imagensPath);    
+                    }
+                    
                     string destinationPath = Path.Combine(imagensPath, Path.GetFileName(archive));
                     if (File.Exists(destinationPath))
                     {
@@ -38,7 +41,6 @@ public class MovePictures
                     {
                         File.Move(archive, destinationPath);
                     }
-                    contImg++;
                 }
                 catch (IOException e)
                 {

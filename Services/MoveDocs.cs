@@ -6,14 +6,10 @@ public class MoveDocs
     public static string MoveDocumentos()
     {
         // caminho da pasta de documentos
-        string path = Names.path;
+        string path = Directories.path;
     
         // novo caminho
-        string documentossPath = Path.Combine(Names.path, "Documentos");
-        if (!Directory.Exists(documentossPath))
-        {
-            Directory.CreateDirectory(documentossPath);
-        }
+        string documentosPath = Path.Combine(Directories.path, "Documentos");
     
         string[] archives = Directory.GetFiles(path);
     
@@ -44,7 +40,14 @@ public class MoveDocs
             {
                 try
                 {
-                    string destinationPath = Path.Combine(documentossPath, Path.GetFileName(archive));
+                    contDocumentos++;
+                    if (!Directory.Exists(documentosPath))
+                    {
+                        if(contDocumentos > 0)
+                            Directory.CreateDirectory(documentosPath);
+                    }
+                    
+                    string destinationPath = Path.Combine(documentosPath, Path.GetFileName(archive));
                     
                     if (File.Exists(destinationPath))
                     {
@@ -54,7 +57,7 @@ public class MoveDocs
                     {
                         File.Move(archive, destinationPath);
                     }
-                    contDocumentos++;
+                    
                 }
                 catch (IOException e)
                 {
