@@ -2,7 +2,7 @@
 
 public class MoveMusic
 {
-    public static int contMusic;
+    private static int _contMusic;
     public static string moveMusic()
     {
         
@@ -25,10 +25,10 @@ public class MoveMusic
             {
                 try
                 {
-                    contMusic++;
+                    _contMusic++;
                     if (!Directory.Exists(musicasPath))
                     {
-                        if(contMusic > 0)
+                        if(_contMusic > 0)
                             Directory.CreateDirectory(musicasPath);
                     }
                     
@@ -52,7 +52,7 @@ public class MoveMusic
         return null;
     }
     public static void imprimirContagemMusicas() {
-        Console.WriteLine("quantidade de musicas: " + contMusic);
+        Console.WriteLine("quantidade de musicas: " + _contMusic);
     }
     
 }

@@ -2,13 +2,13 @@
 
 public class MoveDocs
 {
-     public static int contDocumentos;
+    private static int _contDocs;
     public static string MoveDocumentos()
     {
         // caminho da pasta de documentos
         string path = Directories.path;
     
-        // novo caminho
+        // caminho a ser enviado
         string documentosPath = Path.Combine(Directories.path, "Documentos");
     
         string[] archives = Directory.GetFiles(path);
@@ -40,10 +40,10 @@ public class MoveDocs
             {
                 try
                 {
-                    contDocumentos++;
+                    _contDocs++;
                     if (!Directory.Exists(documentosPath))
                     {
-                        if(contDocumentos > 0)
+                        if(_contDocs > 0)
                             Directory.CreateDirectory(documentosPath);
                     }
                     
@@ -58,6 +58,8 @@ public class MoveDocs
                         File.Move(archive, destinationPath);
                     }
                     
+                    Color.ColorConsole(Path.GetFileName(archive));
+                    
                 }
                 catch (IOException e)
                 {
@@ -68,7 +70,7 @@ public class MoveDocs
         return null;
     }
     public static void imprimirContagemDocumentos() {
-        Console.WriteLine("quantidade de documentos: " + contDocumentos);
+        Console.WriteLine("quantidade de documentos: " + _contDocs);
     }
     
 }

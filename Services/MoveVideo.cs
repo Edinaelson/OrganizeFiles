@@ -2,7 +2,7 @@
 
 public class MoveVideo
 {
-    public static int contVid;
+    private static int _contVid;
     public static string moveVideo()
     {
         // caminho da pasta de videos
@@ -28,10 +28,10 @@ public class MoveVideo
             {
                 try
                 {
-                    contVid++;
+                    _contVid++;
                     if (!Directory.Exists(videoPath))
                     {
-                        if(contVid > 0)
+                        if(_contVid > 0)
                             Directory.CreateDirectory(videoPath);
                     }
                     
@@ -55,6 +55,6 @@ public class MoveVideo
         return null;
     }
     public static void imprimirContagemVideos() {
-        Console.WriteLine("quantidade de videos: " + contVid);
+        Console.WriteLine("quantidade de videos: " + _contVid);
     }
 }

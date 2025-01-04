@@ -2,7 +2,7 @@
 
 public class MoveProgram
 {
-    public static int contProgram;
+    private static int _contProgram;
     public static string MoveProgramas()
     {
         // caminho da pasta de programas
@@ -26,10 +26,10 @@ public class MoveProgram
             {
                 try
                 {
-                    contProgram++;
+                    _contProgram++;
                     if (!Directory.Exists(programasPath))
                     {
-                        if(contProgram > 0)
+                        if(_contProgram > 0)
                             Directory.CreateDirectory(programasPath);
                     }
                     
@@ -54,6 +54,6 @@ public class MoveProgram
         return null;
     }
     public static void imprimirContagemProgramas() {
-        Console.WriteLine("quantidade de programas: " + contProgram);
+        Console.WriteLine("quantidade de programas: " + _contProgram);
     }
 }

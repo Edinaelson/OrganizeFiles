@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Color.colorUkraine();
+        Color.ColorUkraine();
         MoveVideo.moveVideo();
         MoveMusic.moveMusic();
         MovePictures.MoveImg();

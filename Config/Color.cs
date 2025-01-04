@@ -2,7 +2,7 @@
 
 public class Color
 {
-    public static void color(String name)
+    public static void ColorConsole(String name)
     {
         Console.BackgroundColor = ConsoleColor.DarkBlue;
         Console.ForegroundColor = ConsoleColor.White;
@@ -12,12 +12,11 @@ public class Color
         Console.BackgroundColor = ConsoleColor.DarkGreen;
         Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine("+++");
-        Console.WriteLine("");
         
         Console.ResetColor();
     }
 
-    public static void colorUkraine()
+    public static void ColorUkraine()
     {
         Console.BackgroundColor = ConsoleColor.Blue;
         Console.ForegroundColor = ConsoleColor.White;

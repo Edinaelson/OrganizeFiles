@@ -2,7 +2,7 @@
 
 public class MovePictures
 {
-    public static int contImg;
+    private static int _contImg;
     public static string MoveImg()
     {
         // caminho da pasta de Imagens
@@ -25,10 +25,10 @@ public class MovePictures
             {
                 try
                 {
-                    contImg++;
+                    _contImg++;
                     if (!Directory.Exists(imagensPath))
                     {
-                        if (contImg > 0)
+                        if (_contImg > 0)
                             Directory.CreateDirectory(imagensPath);    
                     }
                     
@@ -51,7 +51,7 @@ public class MovePictures
         return null;
     }
     public static void imprimirContagemImagens() {
-        Console.WriteLine("quantidade de imagens: " + contImg);
+        Console.WriteLine("quantidade de imagens: " + _contImg);
     }
     
 }
