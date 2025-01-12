@@ -1,5 +1,0 @@
-C:\Users\datam\OneDrive - Educacional\dotnet\FileChecks\bin\Release\net6.0\publish\FileChecks.exe
-C:\Users\datam\OneDrive - Educacional\dotnet\FileChecks\bin\Release\net6.0\publish\FileChecks.dll
-C:\Users\datam\OneDrive - Educacional\dotnet\FileChecks\bin\Release\net6.0\publish\FileChecks.deps.json
-C:\Users\datam\OneDrive - Educacional\dotnet\FileChecks\bin\Release\net6.0\publish\FileChecks.runtimeconfig.json
-C:\Users\datam\OneDrive - Educacional\dotnet\FileChecks\bin\Release\net6.0\publish\FileChecks.pdb

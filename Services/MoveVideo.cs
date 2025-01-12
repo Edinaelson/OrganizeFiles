@@ -9,7 +9,7 @@ public class MoveVideo
         string path = Directories.path;
     
         // novo caminho
-        string videoPath = Path.Combine(Directories.path, "Videos");
+        string videoPath = Path.Combine(Directories.path, "Video");
         
     
         string[] archives = Directory.GetFiles(path);
@@ -17,14 +17,7 @@ public class MoveVideo
         // mover apenas videos
         foreach (string archive in archives)
         {
-            if (archive.EndsWith(".mp4", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".avi", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".mov", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".mpg", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".mpeg", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".flv", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".mkv", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".wmv", StringComparison.OrdinalIgnoreCase))
+            if (ListOfExtensions.VideoList().Any(ext=> archive.EndsWith(ext)))
             {
                 try
                 {
@@ -44,6 +37,8 @@ public class MoveVideo
                     {
                         File.Move(archive, destinationPath);
                     }
+                    
+                    Color.ColorConsole(Path.GetFileName(archive));
                     
                 }
                 catch (IOException e)

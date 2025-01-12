@@ -16,12 +16,7 @@ public class MovePictures
         // mover apenas imagens
         foreach (string archive in archives)
         {
-            if (archive.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".png", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".psd", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".svg", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".gif", StringComparison.OrdinalIgnoreCase))
+            if (ListOfExtensions.PicturesList().Any(ext=> archive.EndsWith(ext)))
             {
                 try
                 {
@@ -41,6 +36,9 @@ public class MovePictures
                     {
                         File.Move(archive, destinationPath);
                     }
+                    
+                    Color.ColorConsole(Path.GetFileName(archive));
+                    
                 }
                 catch (IOException e)
                 {

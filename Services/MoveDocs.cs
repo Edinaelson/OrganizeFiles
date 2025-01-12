@@ -12,31 +12,11 @@ public class MoveDocs
         string documentosPath = Path.Combine(Directories.path, "Documentos");
     
         string[] archives = Directory.GetFiles(path);
-    
+        
         // mover apenas documentos
         foreach (string archive in archives)
         {
-            if (archive.EndsWith(".rar", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".docx", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".doc", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".zip", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".txt", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".xml", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".xps", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".csv", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".ods", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".xls", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".xlsb", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".xltm", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".bmp", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".odp", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".ppt", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".pptx", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".rtf", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".odg", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".odt", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".docm", StringComparison.OrdinalIgnoreCase))
+            if (ListOfExtensions.DoscList().Any(ext => archive.EndsWith(ext)))
             {
                 try
                 {
@@ -69,6 +49,7 @@ public class MoveDocs
         }
         return null;
     }
+
     public static void imprimirContagemDocumentos() {
         Console.WriteLine("quantidade de documentos: " + _contDocs);
     }

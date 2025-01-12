@@ -9,7 +9,7 @@ public class MoveProgram
         string path = Directories.path;
     
         // novo caminho
-        string programasPath = Path.Combine(Directories.path, "Programas");
+        string programasPath = Path.Combine(Directories.path, "Programs");
         
     
         string[] archives = Directory.GetFiles(path);
@@ -17,12 +17,7 @@ public class MoveProgram
         // mover apenas programas
         foreach (string archive in archives)
         {
-            if (archive.EndsWith(".exe", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".iso", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".dll", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".pdb", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".json", StringComparison.OrdinalIgnoreCase)
-                || archive.EndsWith(".msi", StringComparison.OrdinalIgnoreCase))
+            if (ListOfExtensions.ProgramList().Any(ext=> archive.EndsWith(ext)))
             {
                 try
                 {
@@ -43,6 +38,8 @@ public class MoveProgram
                     {
                         File.Move(archive, destinationPath);
                     }
+                    
+                    Color.ColorConsole(Path.GetFileName(archive));
                     
                 }
                 catch (IOException e)

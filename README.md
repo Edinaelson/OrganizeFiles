@@ -2,7 +2,7 @@
 Organizando seus arquivos.
 
 # resumo:
-  <h3> organiza seus arquivos para as suas respectivas pastas, ex: foto.png o programa enviar para a pasta imagem.</h3>
+  <h3> organiza seus arquivos para as suas respectivas pastas, ex: foto.png o programa envia para a pasta imagem.</h3>
   
 # Funcionalidades:
 

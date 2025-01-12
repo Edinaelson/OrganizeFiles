@@ -4,16 +4,13 @@ public class Color
 {
     public static void ColorConsole(String name)
     {
-        Console.BackgroundColor = ConsoleColor.DarkBlue;
-        Console.ForegroundColor = ConsoleColor.White;
-        
-        Console.Write("{0} enviado com sucesso!", name);
-        
         Console.BackgroundColor = ConsoleColor.DarkGreen;
         Console.ForegroundColor = ConsoleColor.White;
-        Console.WriteLine("+++");
-        
+        Console.Write("+");
         Console.ResetColor();
+        
+        Console.WriteLine(" {0} ", name);
+        
     }
 
     public static void ColorUkraine()

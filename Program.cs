@@ -1,24 +1,27 @@
-﻿using FileChecks;
+﻿using System.Diagnostics;
 using FileChecks.controller;
-using Console = System.Console;
 class Program
 {
     static void Main(string[] args)
     {
-        Color.ColorUkraine();
+        Stopwatch stopwatch = new Stopwatch();
+        
+        stopwatch.Start();
+        
+        MoveDocs.MoveDocumentos();
         MoveVideo.moveVideo();
         MoveMusic.moveMusic();
         MovePictures.MoveImg();
         MoveProgram.MoveProgramas();
-        MoveDocs.MoveDocumentos();
         
+        MoveVideo.imprimirContagemVideos();
         MoveDocs.imprimirContagemDocumentos();
         MoveProgram.imprimirContagemProgramas();
-        MoveMusic.imprimirContagemMusicas();
         MovePictures.imprimirContagemImagens();
-        MoveVideo.imprimirContagemVideos();
+        MoveMusic.imprimirContagemMusicas();
         
-        Console.WriteLine("Aperte qualquer tecla para sair...");
-        Console.ReadKey();
+        stopwatch.Stop();
+        
+        Console.WriteLine($"Tempo decorrido: {stopwatch.ElapsedMilliseconds} ms");
     }
 }
