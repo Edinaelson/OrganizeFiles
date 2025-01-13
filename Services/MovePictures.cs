@@ -48,7 +48,7 @@ public class MovePictures
         }
         return null;
     }
-    public static void imprimirContagemImagens() {
+    public static void printContImagens() {
         Console.WriteLine("quantidade de imagens: " + _contImg);
     }
     

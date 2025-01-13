@@ -50,7 +50,7 @@ public class MoveProgram
         }
         return null;
     }
-    public static void imprimirContagemProgramas() {
+    public static void printContPrograms() {
         Console.WriteLine("quantidade de programas: " + _contProgram);
     }
 }

@@ -46,7 +46,7 @@ public class MoveMusic
         }
         return null;
     }
-    public static void imprimirContagemMusicas() {
+    public static void printContMusics() {
         Console.WriteLine("quantidade de musicas: " + _contMusic);
     }
     

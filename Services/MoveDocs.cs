@@ -50,7 +50,7 @@ public class MoveDocs
         return null;
     }
 
-    public static void imprimirContagemDocumentos() {
+    public static void printContDocs() {
         Console.WriteLine("quantidade de documentos: " + _contDocs);
     }
     

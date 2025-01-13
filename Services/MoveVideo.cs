@@ -49,7 +49,7 @@ public class MoveVideo
         }
         return null;
     }
-    public static void imprimirContagemVideos() {
+    public static void printContVideos() {
         Console.WriteLine("quantidade de videos: " + _contVid);
     }
 }

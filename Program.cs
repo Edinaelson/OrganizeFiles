@@ -14,11 +14,11 @@ class Program
         MovePictures.MoveImg();
         MoveProgram.MoveProgramas();
         
-        MoveVideo.imprimirContagemVideos();
-        MoveDocs.imprimirContagemDocumentos();
-        MoveProgram.imprimirContagemProgramas();
-        MovePictures.imprimirContagemImagens();
-        MoveMusic.imprimirContagemMusicas();
+        MoveVideo.printContVideos();
+        MoveDocs.printContDocs();
+        MoveProgram.printContPrograms();
+        MovePictures.printContImagens();
+        MoveMusic.printContMusics();
         
         stopwatch.Stop();
         

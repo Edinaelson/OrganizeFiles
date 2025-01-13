@@ -9,7 +9,7 @@ public class ListOfExtensions
         string[] docs = {
             ".rar", ".docx", ".doc", ".pdf", ".zip", ".txt", ".xml",
             ".xps", ".csv", ".ods", ".xls", ".xlsb", ".xltm",
-            ".bmp", ".odp", ".ppt", ".pptx", ".rtf", ".odg", ".odt", ".docm"
+            ".bmp", ".odp", ".ppt", ".pptx", ".rtf", ".odg", ".odt", ".docm", ".excalidraw"
         };
         return docs;
     }
