@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics;
-using FileChecks.controller;
+using FileChecks;
 class Program
 {
     static void Main(string[] args)

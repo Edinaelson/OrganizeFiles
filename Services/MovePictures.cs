@@ -1,4 +1,4 @@
-﻿namespace FileChecks.controller;
+﻿namespace FileChecks;
 
 public class MovePictures
 {

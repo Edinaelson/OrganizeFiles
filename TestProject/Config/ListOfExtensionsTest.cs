@@ -1,10 +1,8 @@
-using FileChecks;
-using System.Collections.Specialized;
 using Xunit;
 
 namespace TestProject
 {
-    public class ListOfExtensions
+    public class ListOfExtensionsTest
     {
         [Theory]
         [InlineData("document.doc", true)]
@@ -15,7 +13,7 @@ namespace TestProject
 
         public void VerifyFileExtension_ShouldReturnExpectedResult(string fileName, bool expected)
         {
-            var validExtensions = FileChecks.ListOfExtensions.DoscList();
+            var validExtensions = ListOfExtensions.DoscList();
 
             bool result = validExtensions.Any(ext => fileName.EndsWith(ext));
 
@@ -27,7 +25,7 @@ namespace TestProject
         [InlineData("document.mp3", true)]
         public void checkIfFileExtensionShouldListMusicExtension(string fileName, bool expected)
         {
-            var validExtensions = FileChecks.ListOfExtensions.MusicList();
+            var validExtensions = ListOfExtensions.MusicList();
 
             bool result = validExtensions.Any(ext => fileName.EndsWith(ext));
 
@@ -38,7 +36,7 @@ namespace TestProject
         [InlineData("document.png", true)]
         public void checkIfFileExtensionShouldListImagesExtension(string fileName, bool expected)
         {
-            var validExtensions = FileChecks.ListOfExtensions.PicturesList();
+            var validExtensions = ListOfExtensions.PicturesList();
 
             bool result = validExtensions.Any(ext => fileName.EndsWith(ext));
 
@@ -49,7 +47,7 @@ namespace TestProject
         [InlineData("document.exe", true)]
         public void checkIfFileExtensionShouldListProgramExtension(string fileName, bool expected)
         {
-            var validExtensions = FileChecks.ListOfExtensions.ProgramList();
+            var validExtensions = ListOfExtensions.ProgramList();
 
             bool result = validExtensions.Any(ext => fileName.EndsWith(ext));
 
@@ -60,7 +58,7 @@ namespace TestProject
         [InlineData("document.mp4", true)]
         public void checkIfFileExtensionShouldListVideoExtension(string fileName, bool expected)
         {
-            var validExtensions = FileChecks.ListOfExtensions.VideoList();
+            var validExtensions = ListOfExtensions.VideoList();
 
             bool result = validExtensions.Any(ext => fileName.EndsWith(ext));
 

@@ -1,6 +1,4 @@
-﻿using FileChecks.controller;
-
-namespace FileChecks;
+﻿using FileChecks;
 
 public class ListOfExtensions
 {
@@ -8,16 +6,15 @@ public class ListOfExtensions
     {
         string[] docs = {
             ".rar", ".docx", ".doc", ".pdf", ".zip", ".txt", ".xml",
-            ".xps", ".csv", ".ods", ".xls", ".xlsb", ".xltm",
-            ".bmp", ".odp", ".ppt", ".pptx", ".rtf", ".odg", ".odt", ".docm", ".excalidraw"
+            ".xps", ".csv", ".ods", ".xls", ".xlsx", ".xltm",
+            ".bmp", ".odp", ".ppt", ".pptx", ".rtf", ".odg", ".odt", ".docm", ".excalidraw", ".torrent"
         };
         return docs;
     }
 
     public static string[] MusicList()
     {
-        string[] docs =
-        { ".mp3", ".m4a", ".wav", ".wma", ".au"};
+        string[] docs = { ".mp3", ".m4a", ".wav", ".wma", ".au"};
         return docs;
     }
 
