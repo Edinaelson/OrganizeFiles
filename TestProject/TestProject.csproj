@@ -8,6 +8,11 @@
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
+	
+	
+	<PropertyGroup>
+		<UseAppHost>true</UseAppHost>
+	</PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.0" />

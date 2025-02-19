@@ -23,5 +23,7 @@ class Program
         stopwatch.Stop();
         
         Console.WriteLine($"Tempo decorrido: {stopwatch.ElapsedMilliseconds} ms");
+        Color.Sucess("Aperte qual quer tecla para sair!");
+        Console.ReadKey();
     }
 }

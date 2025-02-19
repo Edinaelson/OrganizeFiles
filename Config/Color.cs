@@ -13,6 +13,14 @@ public class Color
         
     }
 
+    public static void Sucess(string name)
+    {
+        Console.BackgroundColor = ConsoleColor.Green;
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.Write(name);
+        Console.ResetColor();
+    }
+
     public static void ColorUkraine()
     {
         Console.BackgroundColor = ConsoleColor.Blue;

@@ -2,7 +2,7 @@
 
 public class MoveProgram
 {
-    private static int _contProgram;
+    private static int _contProgram = -1;
     public static string MoveProgramas()
     {
         // caminho da pasta de programas
@@ -29,24 +29,26 @@ public class MoveProgram
                     }
                     
                     string destinationPath = Path.Combine(programasPath, Path.GetFileName(archive));
-                    
-                    if (File.Exists(destinationPath))
+
+                    if (!Path.GetFileName(archive).Equals("FileChecks.exe"))
                     {
-                        File.Move(archive, destinationPath, true);
+                        if (File.Exists(destinationPath))
+                        {
+                            File.Move(archive, destinationPath, true);
+                        }
+                        else
+                        {
+                            File.Move(archive, destinationPath);
+                        }    
                     }
-                    else
-                    {
-                        File.Move(archive, destinationPath);
-                    }
-                    
                     Color.ColorConsole(Path.GetFileName(archive));
-                    
                 }
                 catch (IOException e)
                 {
                     Console.WriteLine(e);
                 }
             }
+            
         }
         return null;
     }
