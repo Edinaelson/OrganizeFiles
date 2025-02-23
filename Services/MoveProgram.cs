@@ -39,9 +39,10 @@ public class MoveProgram
                         else
                         {
                             File.Move(archive, destinationPath);
-                        }    
+                        }
+                        Color.ColorConsole(Path.GetFileName(archive));
                     }
-                    Color.ColorConsole(Path.GetFileName(archive));
+                   
                 }
                 catch (IOException e)
                 {

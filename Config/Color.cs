@@ -15,8 +15,8 @@ public class Color
 
     public static void Sucess(string name)
     {
-        Console.BackgroundColor = ConsoleColor.Green;
-        Console.ForegroundColor = ConsoleColor.White;
+        //Console.BackgroundColor = ConsoleColor.Green;
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.Write(name);
         Console.ResetColor();
     }

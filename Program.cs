@@ -1,9 +1,20 @@
 ﻿using System.Diagnostics;
+using System.Reflection;
 using FileChecks;
 class Program
 {
     static void Main(string[] args)
     {
+
+        //var assembly = Assembly.GetExecutingAssembly();
+        //Console.WriteLine($"AssemblyVersion: {assembly.GetName().Version}");
+
+        //var fileVersion = assembly.GetCustomAttribute<AssemblyFileVersionAttribute>()?.Version;
+        //Console.WriteLine($"FileVersion: {fileVersion}");
+
+        //var infoVersion = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
+        //Console.WriteLine($"InformationalVersion: {infoVersion}");
+
         Stopwatch stopwatch = new Stopwatch();
         
         stopwatch.Start();
@@ -23,7 +34,7 @@ class Program
         stopwatch.Stop();
         
         Console.WriteLine($"Tempo decorrido: {stopwatch.ElapsedMilliseconds} ms");
-        Color.Sucess("Aperte qual quer tecla para sair!");
+        Color.Sucess("Aperte qualquer tecla para sair!");
         Console.ReadKey();
     }
 }
