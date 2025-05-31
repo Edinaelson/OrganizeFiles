@@ -5,7 +5,7 @@ public class ListOfExtensions
     public static string[] DoscList()
     {
         string[] docs = {
-            ".rar", ".docx", ".doc", ".pdf", ".zip", ".txt", ".xml",".icon","ico",".cbs",".conf","Ext","7z","bml",
+            ".rar", ".docx", ".doc", ".pdf", ".zip", ".txt", ".xml",".cbs",".conf","Ext","7z","bml",
             ".xps", ".csv", ".ods", ".xls", ".xlsx", ".xltm",
             ".bmp", ".odp", ".ppt", ".pptx", ".rtf", ".odg", ".odt", ".docm", ".excalidraw", ".torrent"
         };
@@ -20,7 +20,7 @@ public class ListOfExtensions
 
     public static string[] PicturesList()
     {
-        string[] docs = { ".jpg", ".jpeg", ".png", ".psd", ".svg", ".gif" };
+        string[] docs = { ".jpg", ".jpeg", ".png", ".psd", ".svg", ".gif",".icon","ico","webp" };
         return docs;
     }
 
