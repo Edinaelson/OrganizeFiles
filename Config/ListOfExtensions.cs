@@ -26,7 +26,7 @@ public class ListOfExtensions
 
     public static string[] ProgramList()
     {
-        string[] docs = { ".exe", ".iso", ".dll", ".pdb", ".json", ".msi" };
+        string[] docs = { ".exe", ".iso", ".dll", ".pdb", ".json", ".msi", ".apk" };
         return docs;
     }
 
