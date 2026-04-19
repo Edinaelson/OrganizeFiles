@@ -16,7 +16,7 @@ public class MoveDocs
         // mover apenas documentos
         foreach (string archive in archives)
         {
-            if (ListOfExtensions.DoscList().Any(ext => archive.EndsWith(ext)))
+            if (ListOfExtensions.IsExtensionInList(archive, ListOfExtensions.DoscList()))
             {
                 try
                 {

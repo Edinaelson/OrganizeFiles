@@ -16,7 +16,7 @@ public class MovePictures
         // mover apenas imagens
         foreach (string archive in archives)
         {
-            if (ListOfExtensions.PicturesList().Any(ext=> archive.EndsWith(ext)))
+            if (ListOfExtensions.IsExtensionInList(archive, ListOfExtensions.PicturesList()))
             {
                 try
                 {

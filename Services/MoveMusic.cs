@@ -15,7 +15,7 @@ public class MoveMusic
         
         foreach (string archive in archives)
         {
-            if (ListOfExtensions.MusicList().Any(ext=> archive.EndsWith(ext)))
+            if (ListOfExtensions.IsExtensionInList(archive, ListOfExtensions.MusicList()))
             {
                 try
                 {

@@ -17,7 +17,7 @@ public class MoveVideo
         // mover apenas videos
         foreach (string archive in archives)
         {
-            if (ListOfExtensions.VideoList().Any(ext=> archive.EndsWith(ext)))
+            if (ListOfExtensions.IsExtensionInList(archive, ListOfExtensions.VideoList()))
             {
                 try
                 {

@@ -24,12 +24,14 @@ class Program
         MoveMusic.moveMusic();
         MovePictures.MoveImg();
         MoveProgram.MoveProgramas();
-        
+        MoveOthers.MoveOutros();
+
         MoveVideo.printContVideos();
         MoveDocs.printContDocs();
         MoveProgram.printContPrograms();
         MovePictures.printContImagens();
         MoveMusic.printContMusics();
+        MoveOthers.printContOutros();
         
         stopwatch.Stop();
         

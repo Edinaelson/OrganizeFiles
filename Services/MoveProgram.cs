@@ -17,7 +17,7 @@ public class MoveProgram
         // mover apenas programas
         foreach (string archive in archives)
         {
-            if (ListOfExtensions.ProgramList().Any(ext=> archive.EndsWith(ext)))
+            if (ListOfExtensions.IsExtensionInList(archive, ListOfExtensions.ProgramList()))
             {
                 try
                 {
